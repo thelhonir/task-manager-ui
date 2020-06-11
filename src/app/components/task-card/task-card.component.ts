@@ -11,6 +11,7 @@ export class TaskCardComponent implements OnInit {
   @Input()
   task: Task;
 
+  STATUS_NAME = STATUS_NAME;
   constructor(private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
@@ -21,6 +22,12 @@ export class TaskCardComponent implements OnInit {
       duration: 2000,
     });
   }
+}
+
+export const STATUS_NAME = {
+  TODO: "To Do",
+  IN_PROGRESS: "In Progress",
+  DONE: "Done"
 }
 
 

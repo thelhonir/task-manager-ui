@@ -7,12 +7,8 @@ import { AppComponent } from './app.component';
 import { StateColumnModule } from './components/state-column/state-column.module';
 import { metaReducers, reducers } from './reducers';
 import { DemoMaterialModule } from './material.module';
-
-
-
-
-
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -23,6 +19,8 @@ import { DemoMaterialModule } from './material.module';
     DragDropModule,
     DemoMaterialModule,
     StateColumnModule,
+    MatButtonModule,
+    MatToolbarModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({}, {}),
     StoreModule.forRoot(reducers, {

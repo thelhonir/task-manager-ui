@@ -46,16 +46,16 @@ export class AppComponent {
   doneList: Array<Task> = [{
     id: 90,
     description: 'Create card component!Create card component!Create card component!Create card component!Create card component!Create card component!Create card component!Create card component!Create card component!Create card component!Create card component!',
-    status: 'IN_PROGRESS'
+    status: 'DONE'
   }, {
     id: 100,
     description: 'Create Column!',
-    status: 'IN_PROGRESS'
+    status: 'DONE'
   }]
 
-  todo = 'todo';
-  ip = 'ip';
-  done = 'done';
+  TODO = 'TODO';
+  IN_PROGRESS = 'IN_PROGRESS';
+  DONE = 'DONE';
 
 
 }
