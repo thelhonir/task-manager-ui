@@ -1,5 +1,5 @@
-@mixin setBorderColor($color)
-    background: -webkit-linear-gradient(270deg, $color 3px,white 3px)
+@import ../../../styles/mixins
+@import ../../../styles/variables
 
 .cdk-drag-preview
     box-sizing: border-box
@@ -8,32 +8,32 @@
     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2)
 
 .cdk-drag-placeholder
-    opacity: 0.1
-    margin: 0 15px
+    opacity: 0
+    margin: 15px 0px
 
 .cdk-drag-animating
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1)
 
 .card-body
-    background-color: #eeeeee
+    background-color: $card-body-color
     margin: 0 15px
     padding: 10px
 
 .TODO
-    color: #27578d
+    color: $todo-card-color
     font-weight: bold
 .IN_PROGRESS
-    color: #ccab3d
+    color: $ip-card-color
     font-weight: bold
 .DONE
-    color: #7ead25
+    color: $done-card-color
     font-weight: bold
     text-decoration-line: line-through
 
 mat-card
     &.TODO_TITLE
-       @include setBorderColor(#27578d)
+       @include setBorderColor($todo-card-color)
     &.IN_PROGRESS_TITLE
-       @include setBorderColor(#ccab3d)
+       @include setBorderColor($ip-card-color)
     &.DONE_TITLE
-       @include setBorderColor(#7ead25)
+       @include setBorderColor($done-card-color)

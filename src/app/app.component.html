@@ -5,6 +5,8 @@
 </mat-toolbar>
 <div cdkDropListGroup class="dashboard">
   <app-state-column [taskStatus]="TODO" [tasks]="taskList"></app-state-column>
+  <div class="column-divider"></div>
   <app-state-column [taskStatus]="IN_PROGRESS" [tasks]="todoList"></app-state-column>
+  <div class="column-divider"></div>
   <app-state-column [taskStatus]="DONE" [tasks]="doneList"></app-state-column>
 </div>
