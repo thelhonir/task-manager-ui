@@ -1,6 +1,6 @@
 <mat-card cdkDrag [ngClass]="task.status + '_TITLE'">
     <mat-card-header>
-        <mat-card-title [matTooltip]="task.id">
+        <mat-card-title [matTooltip]="task.id" matTooltipPosition="after">
             Task {{task.id.substr(0,8)}}
         </mat-card-title>
         <mat-card-subtitle>

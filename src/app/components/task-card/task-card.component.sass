@@ -18,6 +18,7 @@
     background-color: $card-body-color
     margin: 0 15px
     padding: 10px
+    word-wrap: break-word
 
 .TODO
     color: $todo-card-color
@@ -32,8 +33,8 @@
 
 mat-card
     &.TODO_TITLE
-       @include setBorderColor($todo-card-color)
+        @include setBorderColor($todo-card-color)
     &.IN_PROGRESS_TITLE
-       @include setBorderColor($ip-card-color)
+        @include setBorderColor($ip-card-color)
     &.DONE_TITLE
-       @include setBorderColor($done-card-color)
+        @include setBorderColor($done-card-color)

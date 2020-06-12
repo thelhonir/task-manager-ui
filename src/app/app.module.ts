@@ -5,10 +5,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { AppComponent } from './app.component';
 import { StateColumnModule } from './components/state-column/state-column.module';
-import { metaReducers, reducers } from './reducers';
+
 import { DemoMaterialModule } from './material.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
+import { TaskManagerService } from './services/task-manager.service';
+import { EffectsModule } from '@ngrx/effects';
+
+import * as TaskManagerReducer from './reducers/taskManager/task-manager.reducer';
+import { TaskManagerEffects } from './effects/task-manager.effects';
 
 @NgModule({
   declarations: [
@@ -21,13 +27,13 @@ import { MatButtonModule } from '@angular/material/button';
     StateColumnModule,
     MatButtonModule,
     MatToolbarModule,
+    HttpClientModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({}, {}),
-    StoreModule.forRoot(reducers, {
-      metaReducers
-    })
+    StoreModule.forRoot({}),
+    StoreModule.forFeature('taskManagerStore', TaskManagerReducer.reducer),
+    EffectsModule.forRoot([TaskManagerEffects])
   ],
-  providers: [],
+  providers: [TaskManagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

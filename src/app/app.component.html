@@ -5,9 +5,9 @@
 </mat-toolbar>
 
 <div cdkDropListGroup class="dashboard">
-  <app-state-column [taskStatus]="TODO" [tasks]="taskList"></app-state-column>
+  <app-state-column [taskStatus]="TODO" [tasks]="todoTasks$ | async" (taskStatusChanged)= "onTaskStatusChanged($event)"></app-state-column>
   <div class="column-divider"></div>
-  <app-state-column [taskStatus]="IN_PROGRESS" [tasks]="todoList"></app-state-column>
+  <app-state-column [taskStatus]="IN_PROGRESS" [tasks]="inProgressTasks$ | async" (taskStatusChanged)= "onTaskStatusChanged($event)"></app-state-column>
   <div class="column-divider"></div>
-  <app-state-column [taskStatus]="DONE" [tasks]="doneList"></app-state-column>
+  <app-state-column [taskStatus]="DONE" [tasks]="doneTasks$ | async" (taskStatusChanged)= "onTaskStatusChanged($event)"></app-state-column>
 </div>
