@@ -3,6 +3,6 @@
 <div class="status-column">
     <div cdkDropList [id]="taskStatus" [cdkDropListData]="tasks" class="status-column"
         (cdkDropListDropped)="drop($event)">
-        <app-task-card *ngFor="let task of tasks" class="card" [task]="task"></app-task-card>
+        <app-task-card *ngFor="let task of tasks" class="card" [task]="task" (delete)="cardDeleted.emit($event)"></app-task-card>
     </div>
 </div>

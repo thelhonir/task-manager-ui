@@ -20,7 +20,11 @@ export class TaskManagerService {
         return this.http.get<Array<Task>>("http://localhost:8080/tasks/DONE");
     }
 
-    updateTask(id: string, task: Task){
+    updateTask(id: string, task: Task) {
         return this.http.put<Task>("http://localhost:8080/task/" + id, task);
+    }
+
+    deleteTask(id: string) {
+        return this.http.delete<Task>("http://localhost:8080/task/" + id);
     }
 }

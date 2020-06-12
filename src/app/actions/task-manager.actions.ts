@@ -45,6 +45,6 @@ export const deleteTaskType = '[DELETE task] delete Task';
 export const deleteTaskSuccessType = '[DELETE task] delete Task successfully';
 export const deleteTaskFailureType = '[DELETE task] Error while deleting a task';
 
-export const deleteTask = createAction(deleteTaskType, props<{ id: string, task: Task }>());
+export const deleteTask = createAction(deleteTaskType, props<{ id: string }>());
 export const deleteTaskSuccess = createAction(deleteTaskSuccessType);
 export const deleteTaskFailure = createAction(deleteTaskFailureType)

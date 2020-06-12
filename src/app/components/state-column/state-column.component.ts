@@ -22,6 +22,9 @@ export class StateColumnComponent implements OnInit {
   @Output()
   taskStatusChanged = new EventEmitter<Task>();
 
+  @Output()
+  cardDeleted = new EventEmitter<string>();
+
   STATUS_NAME = STATUS;
 
   constructor(private _snackBar: MatSnackBar) { }

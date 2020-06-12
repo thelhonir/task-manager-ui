@@ -8,8 +8,7 @@ import { selectTodoList, selectInProgressList, selectDoneList } from './reducers
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
   title = 'task-manager-ui';
@@ -33,6 +32,11 @@ export class AppComponent {
 
   onTaskStatusChanged(task: Task) {
     this.store.dispatch(TaskManagerActions.updateTask({ id: task.id, task: task }));
+    this.getLists();
+  }
+
+  onCardDeleted(id: string){
+    this.store.dispatch(TaskManagerActions.deleteTask({id: id}));
     this.getLists();
   }
 

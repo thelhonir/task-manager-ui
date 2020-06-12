@@ -35,5 +35,12 @@ export class TaskManagerEffects {
             catchError(() => TaskManagerActions.updateTaskFailure)
         ))));
 
+    deleteTask$ = createEffect(() => this.actions$.pipe(
+        ofType(TaskManagerActions.deleteTask),
+        mergeMap((action) => this.taskManagerService.deleteTask(action.id).pipe(
+            map(() => TaskManagerActions.deleteTaskSuccess()),
+            catchError(() => TaskManagerActions.deleteTaskFailure)
+        ))));
+
     constructor(private actions$: Actions, private taskManagerService: TaskManagerService) { }
 }
